@@ -43,8 +43,7 @@ router.post('/send-otp', async (req, res) => {
 
     res.json({ success: true, message: 'Verification code sent successfully' });
   } catch (err) {
-    console.error('Send OTP error:', err);
-    res.status(500).json({ error: 'Internal server error while sending email' });
+    res.status(500).json({ error: err.message, stack: err.stack, full: String(err) });
   }
 });
 
