@@ -1,6 +1,7 @@
 services:
   - type: web
     name: tap-thrive-backend
+    plan: free
     env: node
     rootDir: backend
     buildCommand: npm install
