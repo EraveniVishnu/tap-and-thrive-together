@@ -20,7 +20,10 @@ const PORT = parseInt(process.env.PORT || '3001');
 
 // Middleware
 app.use(cors({
-  origin: [process.env.FRONTEND_URL || 'http://localhost:5173', 'http://localhost:8080'],
+  origin: function (origin, callback) {
+    // Allow any origin to support Vercel preview and production URLs without trailing slash issues
+    callback(null, true);
+  },
   credentials: true,
 }));
 app.use(express.json());
