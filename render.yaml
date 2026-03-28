@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: tap-thrive-backend
+    env: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 3001
+      - key: FRONTEND_URL
+        value: "" # TODO: Add your Vercel URL here after frontend deployment
+      - key: DATABASE_URL
+        value: "postgresql://neondb_owner:npg_vD0Oo6YLbBZR@ep-muddy-hill-an32fmv2-pooler.c-6.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require" # TODO: Add your Neon Database URL here
+      - key: JWT_SECRET
+        generateValue: true
+      - key: EMAIL_USER
+        value: "yadavvishnu0082@gmail.com" # TODO: Add your Email User
+      - key: EMAIL_PASS
+        value: "vqcz rmhb ltki gaun" # TODO: Add your Email Password
