@@ -1,4 +1,8 @@
 import nodemailer from 'nodemailer';
+import dns from 'node:dns';
+
+// Force node to use IPv4 to bypass Render's IPv6 ENETUNREACH issues for Gmail SMTP
+dns.setDefaultResultOrder('ipv4first');
 
 let transporter = null;
 
