@@ -9,7 +9,7 @@ services:
       - key: PORT
         value: 3001
       - key: FRONTEND_URL
-        value: "" # TODO: Add your Vercel URL here after frontend deployment
+        value: "https://tap-and-thrive-together-yrbr.vercel.app" # TODO: Add your Vercel URL here after frontend deployment
       - key: DATABASE_URL
         value: "postgresql://neondb_owner:npg_vD0Oo6YLbBZR@ep-muddy-hill-an32fmv2-pooler.c-6.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require" # TODO: Add your Neon Database URL here
       - key: JWT_SECRET
