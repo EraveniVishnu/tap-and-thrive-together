@@ -13,7 +13,7 @@ import gamificationRoutes from './routes/gamification.js';
 import notificationsRoutes from './routes/notifications.js';
 import { initReminderService } from './services/reminderService.js';
 
-dotenv.config({ path: '.env.example' });
+dotenv.config();
 
 const app = express();
 const PORT = parseInt(process.env.PORT || '3001');
@@ -21,7 +21,7 @@ const PORT = parseInt(process.env.PORT || '3001');
 // Middleware
 app.use(cors({
   origin: function (origin, callback) {
-    // Allow any origin to support Vercel preview and production URLs without trailing slash issues
+    // Allow any origin for local development
     callback(null, true);
   },
   credentials: true,
