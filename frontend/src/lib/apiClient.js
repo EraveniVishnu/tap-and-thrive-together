@@ -1,8 +1,8 @@
 // API client that replaces the Supabase client.
-// All requests go to VITE_API_URL (your own backend).
+// All requests go to VITE_APP_URL (your own backend).
 // The JWT token is stored in localStorage under 'tap_token'.
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+const API_URL = import.meta.env.VITE_APP_URL || 'http://localhost:3001';
 
 function getToken() {
   return localStorage.getItem('tap_token');
